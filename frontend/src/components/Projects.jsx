@@ -8,7 +8,7 @@ function Projects() {
   useEffect(() => {
 
     axios
-      .get("http://localhost:5000/api/projects")
+      .get("https://personal-portfolio-production-da8a.up.railway.app/api/projects")
       .then((response) => {
         setProjects(response.data);
       })

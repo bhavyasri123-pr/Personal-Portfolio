@@ -25,7 +25,7 @@ function ManageProjects() {
         try {
 
             const res = await axios.get(
-                "http://localhost:5000/api/projects"
+                "https://personal-portfolio-production-da8a.up.railway.app/api/projects"
             );
 
             setProjects(res.data);
@@ -49,7 +49,7 @@ function ManageProjects() {
         try {
 
             await axios.delete(
-                `http://localhost:5000/api/projects/${id}`
+                `https://personal-portfolio-production-da8a.up.railway.app/api/projects/${id}`
             );
 
             alert("Project Deleted Successfully");

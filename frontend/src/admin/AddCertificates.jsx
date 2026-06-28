@@ -19,7 +19,7 @@ function AddCertificates() {
         try {
 
             await axios.post(
-                "http://localhost:5000/api/certifications",
+                "https://personal-portfolio-production-da8a.up.railway.app/api/certifications",
                 {
                     icon_name: iconName,
                     title,

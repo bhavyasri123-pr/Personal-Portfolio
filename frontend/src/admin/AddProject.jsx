@@ -15,7 +15,7 @@ function AddProject() {
 
         try {
 
-            await axios.post("http://localhost:5000/api/projects", {
+            await axios.post("https://personal-portfolio-production-da8a.up.railway.app/api/projects", {
                 title,
                 description,
                 technologies,
