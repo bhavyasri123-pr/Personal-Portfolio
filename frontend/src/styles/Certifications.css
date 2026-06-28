@@ -1,0 +1,156 @@
+#certifications{
+    background: #090914;
+    padding: 80px 8%;
+    color: white;
+}
+
+/* Heading */
+#certifications h2{
+    text-align: left;
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+#certifications h2 span{
+    color: #A855F7;
+}
+
+.cert-subtitle{
+    text-align: center;
+    color: #B3B3C7;
+    margin-bottom: 50px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Grid */
+.cert-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 280px));
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Card */
+.cert-card{
+    display: block;
+    text-decoration: none;
+    color: white;
+
+    background: #11111B;
+    border: 1px solid #2D2D44;
+    border-radius: 12px;
+    padding: 14px;
+    min-height: auto;
+
+    transition: 0.3s;
+}
+
+.cert-card:hover{
+    transform: translateY(-8px);
+    border-color: #A855F7;
+    box-shadow: 0 0 18px rgba(168,85,247,0.18);
+}
+
+/* Top */
+.cert-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+/* React icon logo box */
+.cert-logo{
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+}
+
+/* External icon */
+.cert-top svg:last-child{
+    font-size: 18px;
+    color: #9CA3AF;
+}
+
+/* Title */
+.cert-card h3{
+    font-size: 16px;
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+/* Provider */
+.cert-card h4{
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Description */
+.cert-card p{
+    color: #D1D5DB;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* Footer */
+.cert-footer{
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+}
+
+/* Colors */
+.purple .cert-logo,
+.purple h4,
+.purple .cert-footer svg{
+    color: #A855F7;
+}
+
+.blue .cert-logo,
+.blue h4,
+.blue .cert-footer svg{
+    color: #3B82F6;
+}
+
+.green .cert-logo,
+.green h4,
+.green .cert-footer svg{
+    color: #22C55E;
+}
+
+.orange .cert-logo,
+.orange h4,
+.orange .cert-footer svg{
+    color: #F59E0B;
+}
+
+.cyan .cert-logo,
+.cyan h4,
+.cyan .cert-footer svg{
+    color: #06B6D4;
+}
+
+/* Mobile */
+@media (max-width: 768px){
+    #certifications{
+        padding: 60px 20px;
+    }
+
+    #certifications h2{
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .cert-card{
+        min-height: auto;
+    }
+}
