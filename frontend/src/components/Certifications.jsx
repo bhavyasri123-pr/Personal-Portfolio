@@ -25,8 +25,7 @@ function Certifications() {
   const [certificates, setCertificates] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/api/certifications")
+    axios.get("https://personal-portfolio-production-da8a.up.railway.app/api/certifications")
       .then((response) => {
         setCertificates(response.data);
       })
