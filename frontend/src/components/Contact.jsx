@@ -26,7 +26,7 @@ function Contact() {
     try {
 
       const response = await axios.post(
-        "https://personal-portfolio-production-da8a.up.railway.app/api/contact",
+        (window.location.hostname === "localhost" ? "http://localhost:5000/api" : "https://personal-portfolio-production-da8a.up.railway.app/api") + "/contact",
         formData
       );
 

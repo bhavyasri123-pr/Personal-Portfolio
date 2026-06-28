@@ -25,7 +25,7 @@ function ManageCertificates() {
         try {
 
             const res = await axios.get(
-                "https://personal-portfolio-production-da8a.up.railway.app/api/certifications"
+                (window.location.hostname === "localhost" ? "http://localhost:5000/api" : "https://personal-portfolio-production-da8a.up.railway.app/api") + "/certifications"
             );
 
             setCertificates(res.data);
@@ -49,7 +49,7 @@ function ManageCertificates() {
         try {
 
             await axios.delete(
-                `https://personal-portfolio-production-da8a.up.railway.app/api/certifications/${id}`
+                `${window.location.hostname === "localhost" ? "http://localhost:5000/api" : "https://personal-portfolio-production-da8a.up.railway.app/api"}/certifications/${id}`
             );
 
             alert("Certificate Deleted Successfully");

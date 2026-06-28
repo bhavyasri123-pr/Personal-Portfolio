@@ -25,7 +25,7 @@ function ManageProjects() {
         try {
 
             const res = await axios.get(
-                "https://personal-portfolio-production-da8a.up.railway.app/api/projects"
+                (window.location.hostname === "localhost" ? "http://localhost:5000/api" : "https://personal-portfolio-production-da8a.up.railway.app/api") + "/projects"
             );
 
             setProjects(res.data);
@@ -49,7 +49,7 @@ function ManageProjects() {
         try {
 
             await axios.delete(
-                `https://personal-portfolio-production-da8a.up.railway.app/api/projects/${id}`
+                `${window.location.hostname === "localhost" ? "http://localhost:5000/api" : "https://personal-portfolio-production-da8a.up.railway.app/api"}/projects/${id}`
             );
 
             alert("Project Deleted Successfully");

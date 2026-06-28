@@ -29,7 +29,7 @@ function EditProject() {
         try {
 
             const res = await axios.get(
-                `https://personal-portfolio-production-da8a.up.railway.app/api/projects/${id}`
+                `${window.location.hostname === "localhost" ? "http://localhost:5000/api" : "https://personal-portfolio-production-da8a.up.railway.app/api"}/projects/${id}`
             );
 
             setTitle(res.data.title);
@@ -50,7 +50,7 @@ function EditProject() {
         try {
 
             await axios.put(
-                `https://personal-portfolio-production-da8a.up.railway.app/api/projects/${id}`,
+                `${window.location.hostname === "localhost" ? "http://localhost:5000/api" : "https://personal-portfolio-production-da8a.up.railway.app/api"}/projects/${id}`,
                 {
                     title,
                     description,

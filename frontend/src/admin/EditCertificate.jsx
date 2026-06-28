@@ -32,7 +32,7 @@ function EditCertificate() {
         try {
 
             const res = await axios.get(
-                `https://personal-portfolio-production-da8a.up.railway.app/api/certifications/${id}`
+                `${window.location.hostname === "localhost" ? "http://localhost:5000/api" : "https://personal-portfolio-production-da8a.up.railway.app/api"}/certifications/${id}`
             );
 
             setIconName(res.data.icon_name);
@@ -56,7 +56,7 @@ function EditCertificate() {
         try {
 
             await axios.put(
-                `https://personal-portfolio-production-da8a.up.railway.app/api/certifications/${id}`,
+                `${window.location.hostname === "localhost" ? "http://localhost:5000/api" : "https://personal-portfolio-production-da8a.up.railway.app/api"}/certifications/${id}`,
                 {
                     icon_name: iconName,
                     title,

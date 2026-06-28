@@ -56,5 +56,35 @@ console.log("Password Match:", isMatch);
         });
 
 });
+// --- TEMPORARY SETUP ROUTE ---
+router.get("/setup", async (req, res) => {
+    try {
+        const username = "bhavya";
+        const newPassword = "Password123!";
+        const hash = await bcrypt.hash(newPassword, 10);
+        
+        // First check if user exists
+        db.query("SELECT * FROM admin WHERE username = ?", [username], (err, result) => {
+            if (err) return res.send("Error checking database.");
+            
+            if (result.length > 0) {
+                // Update
+                db.query("UPDATE admin SET password = ? WHERE username = ?", [hash, username], (err) => {
+                    if (err) return res.send("Error updating password.");
+                    res.send("<h1>✅ Success! Password UPDATED on Live Database.</h1><p>You can now go back and log in with username: <b>bhavya</b> and password: <b>Password123!</b></p>");
+                });
+            } else {
+                // Insert
+                db.query("INSERT INTO admin (username, password) VALUES (?, ?)", [username, hash], (err) => {
+                    if (err) return res.send("Error inserting user.");
+                    res.send("<h1>✅ Success! User CREATED on Live Database.</h1><p>You can now go back and log in with username: <b>bhavya</b> and password: <b>Password123!</b></p>");
+                });
+            }
+        });
+    } catch (e) {
+        res.send("Error hashing password.");
+    }
+});
+// -----------------------------
 
 module.exports = router;

@@ -25,7 +25,7 @@ function ManageContacts() {
         try {
 
             const res = await axios.get(
-                "https://personal-portfolio-production-da8a.up.railway.app/api/contact"
+                (window.location.hostname === "localhost" ? "http://localhost:5000/api" : "https://personal-portfolio-production-da8a.up.railway.app/api") + "/contact"
             );
 
             setContacts(res.data);
@@ -49,7 +49,7 @@ function ManageContacts() {
         try {
 
             await axios.delete(
-                `https://personal-portfolio-production-da8a.up.railway.app/api/contact/${id}`
+                `${window.location.hostname === "localhost" ? "http://localhost:5000/api" : "https://personal-portfolio-production-da8a.up.railway.app/api"}/contact/${id}`
             );
 
             alert("Message Deleted Successfully");

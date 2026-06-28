@@ -8,7 +8,7 @@ function Projects() {
   useEffect(() => {
 
     axios
-      .get("https://personal-portfolio-production-da8a.up.railway.app/api/projects")
+      .get((window.location.hostname === "localhost" ? "http://localhost:5000/api" : "https://personal-portfolio-production-da8a.up.railway.app/api") + "/projects")
       .then((response) => {
         setProjects(response.data);
       })
