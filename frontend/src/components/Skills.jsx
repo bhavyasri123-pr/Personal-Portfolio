@@ -3,9 +3,10 @@ import {
   FaReact,
   FaHtml5,
   FaCss3Alt,
-  FaJs
+  FaJs,
+  FaNodeJs
 } from "react-icons/fa";
-import { SiMysql } from "react-icons/si";
+import { SiMysql, SiExpress } from "react-icons/si";
 
 function Skills() {
   return (
@@ -34,6 +35,14 @@ function Skills() {
         <li className="skill-card">
           <FaCss3Alt className="skill-icon" color="#1572B6" />
           <span>CSS3</span>
+        </li>
+        <li className="skill-card">
+          <FaNodeJs className="skill-icon" color="#339933" />
+          <span>Node.js</span>
+        </li>
+        <li className="skill-card">
+          <SiExpress className="skill-icon" color="#FFFFFF" />
+          <span>Express.js</span>
         </li>
         <li className="skill-card">
           <SiMysql className="skill-icon" color="#4479A1" />

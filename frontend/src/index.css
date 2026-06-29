@@ -422,32 +422,23 @@ section > h2, .skills-header h2, #certifications h2 {
 
 #projects .project-card {
     flex: 1;
-    min-width: 320px;
+    min-width: 250px;
     max-width: 550px;
 }
 
-#projects div{
-
+#projects .project-card {
     background:#1E1E2E;
-
     padding:25px;
-
     margin-bottom:25px;
-
     border-radius:15px;
-
     border:1px solid #313244;
-
     transition:.3s;
     margin-top:18px;
 }
 
-#projects div:hover{
-
+#projects .project-card:hover {
     transform:translateY(-8px);
-
     border-color:#8B5CF6;
-
     box-shadow:0 12px 30px rgba(0,0,0,.35);
 }
 
