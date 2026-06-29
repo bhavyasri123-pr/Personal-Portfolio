@@ -63,13 +63,23 @@ router.get("/setup", async (req, res) => {
         const newPassword = "Password123!";
         const hash = await bcrypt.hash(newPassword, 10);
         
-        // 1. Create Tables if they don't exist
-        const createAdminTable = "CREATE TABLE IF NOT EXISTS admin (id INT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(255), password VARCHAR(255))";
-        const createProjectsTable = "CREATE TABLE IF NOT EXISTS projects (id INT AUTO_INCREMENT PRIMARY KEY, title VARCHAR(255), description TEXT, technologies VARCHAR(255), github_link VARCHAR(255))";
-        const createCertificatesTable = "CREATE TABLE IF NOT EXISTS certifications (id INT AUTO_INCREMENT PRIMARY KEY, icon_name VARCHAR(255), title VARCHAR(255), provider VARCHAR(255), description TEXT, year VARCHAR(255), color VARCHAR(255), link VARCHAR(255))";
-        const createContactsTable = "CREATE TABLE IF NOT EXISTS contacts (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), email VARCHAR(255), message TEXT)";
+        // 1. Drop existing badly formatted tables and Create them cleanly
+        const dropAdminTable = "DROP TABLE IF EXISTS admin";
+        const dropProjectsTable = "DROP TABLE IF EXISTS projects";
+        const dropCertificatesTable = "DROP TABLE IF EXISTS certifications";
+        const dropContactsTable = "DROP TABLE IF EXISTS contacts";
 
-        // Run table creations sequentially using Promises for simplicity in this script
+        const createAdminTable = "CREATE TABLE admin (id INT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(255), password VARCHAR(255))";
+        const createProjectsTable = "CREATE TABLE projects (id INT AUTO_INCREMENT PRIMARY KEY, title VARCHAR(255), description TEXT, technologies VARCHAR(255), github_link VARCHAR(255))";
+        const createCertificatesTable = "CREATE TABLE certifications (id INT AUTO_INCREMENT PRIMARY KEY, icon_name VARCHAR(255), title VARCHAR(255), provider VARCHAR(255), description TEXT, year VARCHAR(255), color VARCHAR(255), link VARCHAR(255))";
+        const createContactsTable = "CREATE TABLE contacts (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), email VARCHAR(255), message TEXT)";
+
+        // Run sequential queries
+        await new Promise((resolve) => db.query(dropAdminTable, resolve));
+        await new Promise((resolve) => db.query(dropProjectsTable, resolve));
+        await new Promise((resolve) => db.query(dropCertificatesTable, resolve));
+        await new Promise((resolve) => db.query(dropContactsTable, resolve));
+        
         await new Promise((resolve) => db.query(createAdminTable, resolve));
         await new Promise((resolve) => db.query(createProjectsTable, resolve));
         await new Promise((resolve) => db.query(createCertificatesTable, resolve));
