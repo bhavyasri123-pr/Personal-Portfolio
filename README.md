@@ -28,6 +28,13 @@ A full-stack personal portfolio website built using React.js, Node.js, Express.j
 ### Database
 - MySQL
 
-## Author
+## 🚀 Live Demo
 
-**Bhavya Sri Donthu**
+- **Portfolio:** [https://bhavya-portfolio-2026.vercel.app/](https://bhavya-portfolio-2026.vercel.app/)
+
+## 👩‍💻 Author
+
+**Donthu Bhavya Sri**
+
+- **GitHub:** [https://github.com/bhavyasri123-pr/Personal-Portfolio](https://github.com/bhavyasri123-pr/Personal-Portfolio)
+- **Portfolio:** [https://bhavya-portfolio-2026.vercel.app/](https://bhavya-portfolio-2026.vercel.app/)
