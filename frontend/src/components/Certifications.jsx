@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useState } from "react";
 import "../styles/Certifications.css";
 
 import {
@@ -22,17 +21,68 @@ const iconMap = {
 };
 
 function Certifications() {
-  const [certificates, setCertificates] = useState([]);
-
-  useEffect(() => {
-    axios.get((window.location.hostname === "localhost" ? "http://localhost:5000/api" : "https://personal-portfolio-crga.onrender.com/api") + "/certifications")
-      .then((response) => {
-        setCertificates(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  const [certificates] = useState([
+    {
+      id: 1,
+      icon_name: "MdWork",
+      title: "Infosys Springboard Internship 6.0",
+      provider: "Infosys Springboard",
+      description: "AI-Driven Expense Tracker & Budget Advisor",
+      year: "2025–2026",
+      color: "purple",
+      link: "/certificates/infosys.pdf"
+    },
+    {
+      id: 2,
+      icon_name: "FaJava",
+      title: "NPTEL – Programming in Java",
+      provider: "NPTEL",
+      description: "Elite Certificate • Score: 76%",
+      year: "2025",
+      color: "blue",
+      link: "/certificates/nptel.pdf"
+    },
+    {
+      id: 3,
+      icon_name: "FaCertificate",
+      title: "TCS iON Career Edge",
+      provider: "TCS iON",
+      description: "Young Professional",
+      year: "June 2025",
+      color: "green",
+      link: "/certificates/tcs.pdf"
+    },
+    {
+      id: 4,
+      icon_name: "FaAws",
+      title: "AWS Cloud Computing Program",
+      provider: "APSSDC",
+      description: "Certificate of Participation",
+      year: "October 2024",
+      color: "orange",
+      link: "/certificates/aws.pdf"
+    },
+    {
+      id: 5,
+      icon_name: "FaDatabase",
+      title: "SQL for Data Management",
+      provider: "360DigiTMG",
+      description: "In association with APSSDC",
+      year: "June 2025",
+      color: "cyan",
+      link: "/certificates/sql.pdf"
+    },
+    {
+      id: 6,
+      icon_name: "FaCertificate",
+      title: "Java Full Stack Development",
+      provider: "XYZ Academy",
+      description: "Completed Java Full Stack Development Course",
+      year: "2026",
+      color: "#f39c12",
+      link: "/certificates/java.pdf"
+    }
+  ]);
 
   return (
     <section id="certifications">
