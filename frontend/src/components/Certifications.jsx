@@ -71,16 +71,6 @@ function Certifications() {
       year: "June 2025",
       color: "cyan",
       link: "/certificates/sql.pdf"
-    },
-    {
-      id: 6,
-      icon_name: "FaCertificate",
-      title: "Java Full Stack Development",
-      provider: "XYZ Academy",
-      description: "Completed Java Full Stack Development Course",
-      year: "2026",
-      color: "#f39c12",
-      link: "/certificates/java.pdf"
     }
   ]);
 
