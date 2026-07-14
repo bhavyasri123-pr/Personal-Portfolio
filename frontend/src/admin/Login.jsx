@@ -19,7 +19,7 @@ function Login() {
         try {
 
             const res = await axios.post(
-                (window.location.hostname === "localhost" ? "http://localhost:5000/api" : "https://personal-portfolio-production-da8a.up.railway.app/api") + "/admin/login",
+                (window.location.hostname === "localhost" ? "http://localhost:5000/api" : "https://personal-portfolio-crga.onrender.com/api") + "/admin/login",
                 {
                     username,
                     password
